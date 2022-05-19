@@ -1,0 +1,79 @@
+app-id: com.vandyke.SecureCRTFX
+runtime: org.freedesktop.Platform
+runtime-version: '21.08'
+sdk: org.freedesktop.Sdk
+command: sfxcl
+tags:
+  - proprietary
+finish-args:
+  - "--share=ipc"
+  - "--socket=x11"
+  - "--socket=wayland"
+  - "--share=network"
+  - "--device=all"
+  - "--filesystem=home"
+  - "--allow=devel"
+modules:
+  - name: SecureCRTFX
+    buildsystem: simple
+    build-commands:
+      - install -D libClientConfigUiQt.so /app/lib/libClientConfigUiQt.so
+      - install -D libCommonUiQt.so /app/lib/libCommonUiQt.so
+      - install -D libQt5Core.so.5 /app/lib/libQt5Core.so.5
+      - install -D libQt5DBus.so.5 /app/lib/libQt5DBus.so.5
+      - install -D libQt5Gui.so.5 /app/lib/libQt5Gui.so.5
+      - install -D libQt5Multimedia.so.5 /app/lib/libQt5Multimedia.so.5
+      - install -D libQt5Network.so.5 /app/lib/libQt5Network.so.5
+      - install -D libQt5PrintSupport.so.5 /app/lib/libQt5PrintSupport.so.5
+      - install -D libQt5Widgets.so.5 /app/lib/libQt5Widgets.so.5
+      - install -D libQt5XcbQpa.so.5 /app/lib/libQt5XcbQpa.so.5
+      - install -D libpython39Qt.so /app/lib/libpython39Qt.so
+      - install -D libpython3Qt.so /app/lib/libpython3Qt.so
+     
+      - install -D sfxcl /app/bin/sfxcl
+      - install -D SecureFX /app/bin/SecureFX
+      - install -D SecureCRT /app/bin/SecureCRT
+      
+      - install -D libcomposeplatforminputcontextplugin.so /app/bin/platforminputcontexts/libcomposeplatforminputcontextplugin.so
+      - install -D libibusplatforminputcontextplugin.so /app/bin/platforminputcontexts/libibusplatforminputcontextplugin.so
+      
+      - install -D libqxcb.so /app/bin/platforms/libqxcb.so
+      
+      - install -D changelog.Debian.gz /app/share/doc/scrt-sfx/changelog.Debian.gz
+      - install -D SecureCRT_SecureFX_Ubuntu_Copyright.txt /app/share/doc/scrt-sfx/copyright
+      
+      - install -D sfxcl.1.gz /app/share/man/man1/sfxcl.1.gz
+      
+      - install -D securecrt_64.png /app/share/icons/hicolor/128x128/apps/com.vandyke.SecureCRTFX.SecureCRT.png
+      - install -D securefx_64.png /app/share/icons/hicolor/128x128/apps/com.vandyke.SecureCRTFX.SecureFX.png
+      
+      - install -D SecureCRT_fr.qm /app/share/vandyke/data/SecureCRT_fr.qm
+      - install -D SecureFX_fr.qm /app/share/vandyke/data/SecureFX_fr.qm
+
+      - mkdir -p /app/share/doc/{scrt,sfx}
+      - cp -a SecureCRTHelp SecureCRT_HISTORY.txt SecureCRT_README.txt SecureCRT_SecureFX_EULA.txt /app/share/doc/scrt
+      - cp -a SecureFXHelp SecureFX_HISTORY.txt SecureFX_README.txt SecureCRT_SecureFX_EULA.txt /app/share/doc/sfx
+      
+      - install -D libgssapi_krb5.so.2 /app/lib/libgssapi_krb5.so.2
+      - install -D libicudata.so.66 /app/lib/libicudata.so.66
+      - install -D libicui18n.so.66 /app/lib/libicui18n.so.66
+      - install -D libicuio.so.66 /app/lib/libicuio.so.66
+      - install -D libicutest.so.66 /app/lib/libicutest.so.66
+      - install -D libicutu.so.66 /app/lib/libicutu.so.66
+      - install -D libicuuc.so.66 /app/lib/libicuuc.so.66
+      - install -D libk5crypto.so.3 /app/lib/libk5crypto.so.3
+      - install -D libkeyutils.so.1 /app/lib/libkeyutils.so.1
+      - install -D libkrb5.so.3 /app/lib/libkrb5.so.3
+      - install -D libkrb5support.so.0 /app/lib/libkrb5support.so.0
+      
+      - install -D com.vandyke.SecureCRTFX.SecureCRT.desktop /app/share/applications/com.vandyke.SecureCRTFX.SecureCRT.desktop
+      - install -D com.vandyke.SecureCRTFX.SecureFX.desktop /app/share/applications/com.vandyke.SecureCRTFX.SecureFX.desktop
+    sources:
+      - type: archive
+        path: scrt-sfx-9.2.1.2768.ubuntu20-64.tar.gz
+      - type: archive
+        path: ubuntu-deps.tar.xz
+      - type: file
+        path: com.vandyke.SecureCRTFX.SecureCRT.desktop
+      - type: file
+        path: com.vandyke.SecureCRTFX.SecureFX.desktop

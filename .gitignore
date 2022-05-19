@@ -1,0 +1,3 @@
+.flatpak-builder/
+scrt-sfx-*.tar.gz
+build-dir/
