@@ -12,5 +12,5 @@ Just build like you would any other flatpak
 
 Some bugs
 =========
-At the moment, history and help do not work as they are hardcoded in /usr/share. I beleve also other languages
-dont work as well due to the same /usr/share hardcoding.
+At the moment, the History tab in the About Box and help do not work as they are hardcoded in /usr/share. 
+I beleve also other languages dont work as well due to the same /usr/share hardcoding.
