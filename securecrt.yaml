@@ -70,7 +70,7 @@ modules:
       - install -D com.vandyke.SecureCRTFX.SecureFX.desktop /app/share/applications/com.vandyke.SecureCRTFX.SecureFX.desktop
     sources:
       - type: archive
-        path: scrt-sfx-9.2.1.2768.ubuntu20-64.tar.gz
+        path: scrt-sfx-9.2.3.2829.ubuntu20-64.tar.gz
       - type: archive
         path: ubuntu-deps.tar.xz
       - type: file

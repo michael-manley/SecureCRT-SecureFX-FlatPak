@@ -4,7 +4,7 @@ The files in here allow you to convert the Ubuntu 20.04 LTS build of SecureCRT/S
 
 To build
 ========
-You must have the scrt-sfx-9.2.1.2768.ubuntu20-64.tar.gz file in the directory this file is in. As we cannot
+You must have the scrt-sfx-9.2.3.2829.ubuntu20-64.tar.gz file in the directory this file is in. As we cannot
 redistribute SecureCRT or SecureFX, you must provide the binaries yourself. This just puts the correct Ubuntu
 dependencies in /app/lib and put files where they belong
 
